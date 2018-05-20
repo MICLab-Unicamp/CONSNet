@@ -1,9 +1,8 @@
 CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks
 ==========================================================================================================================
 
-BSD 2-Clause License
-Copyright (c) 2016, Roberto Souza and collaborators
-All rights reserved.
+MIT License
+Copyright (c) 2018 Medical Image Computing Lab - MICLab Unicamp
 
 
 Description
