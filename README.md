@@ -1,5 +1,6 @@
 ==================================
-CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks
+CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR 
+Imaging using Consensus-based Silver Standard Masks
 ==================================
 
 BSD 2-Clause License
@@ -24,7 +25,6 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 Requirements
 ------------
 
-This toolbox works with Python 2.x and requires NumPy. I use SWIG to communicate C and Python, but I generate the SWIG wrappers myself, so you don’t need to install SWIG on your computer.
 
 Run the Code
 -------------
