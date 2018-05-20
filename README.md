@@ -10,7 +10,7 @@ Description
 
 This is an alpha version of the CONSNet presented in the paper *Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks* . The article is available for download here: http://https://arxiv.org/pdf/1804.04988.pdf . If you use this code on your work, please cite the this article.
 
-- Lucena, Oeslle, et al. "Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver standard Masks." arXiv preprint arXiv:1804.04988 (2018)..
+- Lucena, Oeslle, et al. "Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver standard Masks." arXiv preprint arXiv:1804.04988 (2018).
 
 @article{lucena2018convolutional,
   title={Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver standard Masks},
