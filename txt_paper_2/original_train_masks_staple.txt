@@ -1,0 +1,2 @@
+/home/oeslle/Documents/Datasets/SS-new/STAPLE8/CVCD28020029_staple.nii.gz
+/home/oeslle/Documents/Datasets/SS-new/STAPLE8/CVCD04020007_staple.nii.gz

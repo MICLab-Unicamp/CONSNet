@@ -1,0 +1,2 @@
+/home/oeslle/Documents/Datasets/SS-new/Original-Nifti/PHILIPS/1.5T/CVCD28020029.nii.gz
+/home/oeslle/Documents/Datasets/SS-new/Original-Nifti/PHILIPS/1.5T/CVCD04020007.nii.gz

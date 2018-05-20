@@ -1,0 +1,12 @@
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/PHILIPS/1.5T/CVCD04020004_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/PHILIPS/1.5T/CVCD04020003_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/PHILIPS/3T/CAMP_SLE_CONTROL0004_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/PHILIPS/3T/CAMP_SLE_CONTROL0002_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/SIEMENS/1.5T/CVCD21990004_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/SIEMENS/1.5T/CVCD21990005_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/SIEMENS/3T/CVCD10010001_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/SIEMENS/3T/CVCD10010002_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/GE/1.5T/CVCD01120001_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/GE/1.5T/CVCD07030027_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/GE/3T/CVCD03060009_man3.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Manual/Final/GE/3T/CVCD03060007_man3.nii.gz

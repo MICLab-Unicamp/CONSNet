@@ -1,0 +1,12 @@
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/PHILIPS/1.5T/CVCD04020004.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/PHILIPS/1.5T/CVCD04020003.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/PHILIPS/3T/CAMP_SLE_CONTROL0002.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/PHILIPS/3T/CAMP_SLE_CONTROL0004.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/SIEMENS/1.5T/CVCD21990005.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/SIEMENS/1.5T/CVCD21990004.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/SIEMENS/3T/CVCD10010001.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/SIEMENS/3T/CVCD10010002.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/GE/1.5T/CVCD07030027.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/GE/1.5T/CVCD01120001.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/GE/3T/CVCD03060007.nii.gz
+/home/oeslle/Documents/MSc_Research/GPU_scripts/datasets/SS-new/Original-Nifti/GE/3T/CVCD03060009.nii.gz
