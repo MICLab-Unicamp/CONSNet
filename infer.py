@@ -1,7 +1,7 @@
 import os, time, argparse
 import nibabel as nib
 import numpy as np
-from libs import evaluation as evl
+from libs import evaluation_utils as evl
 from libs import prep_utils as prep
 from libs import cnn_utils as cnn
 from scipy import ndimage as ndi
