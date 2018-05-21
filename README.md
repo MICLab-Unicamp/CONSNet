@@ -31,8 +31,8 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 - Tensorflow 1.4.0
 
 
-## Run the Code
-### Inference unsing CONSNet pre-trained models:
+## RUsage
+### Inference using CONSNet pre-trained models:
 
 ```
 python infer
