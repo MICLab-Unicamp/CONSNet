@@ -30,14 +30,27 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 - Keras 2.1.6
 - Tensorflow 1.4.0
 
+## Docker image (TO DO)
 
-## RUsage
-### Inference using CONSNet pre-trained models:
+
+## Usage
+
+### Inference using CONSNet pre-trained models
+If you just to want to run the inference for a new volume, you need to run the command below providing a text file with the path of the respective data. 
 
 ```
-python infer
+python infer.py -input input_data.txt
 ```
 
+### Training your own model
+You can train your own model for CONSNet. You need to provide two text files with the data and the respective annotated masks paths. Also, feel free to change the default parameters.
+
+```
+python prep-train.py -tr_original_filename data.txt -tr_consensus_filename mask.txt
+
+```
+
+### Fine-tuning CONSNet (TO DO)
 
 
 
