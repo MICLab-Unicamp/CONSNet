@@ -7,7 +7,7 @@ Copyright (c) 2018 Medical Image Computing Lab - MICLab Unicamp
 
 ## Description
 
-This is an alpha version of the CONSNet presented in the paper *Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks* . The article is available for download here: http://https://arxiv.org/pdf/1804.04988.pdf . If you use this code on your work, please cite the this article.
+This is an alpha version of the CONSNet presented in the paper *Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks* . The article is available for download here: https://arxiv.org/pdf/1804.04988.pdf . If you use this code on your work, please cite the this article.
 
 - Lucena, Oeslle, et al. "Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver standard Masks." arXiv preprint arXiv:1804.04988 (2018).
 
