@@ -74,7 +74,7 @@ def predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
     sigma = 0.5
 
     root = input_name.split('/')[-1].split('.nii.gz')[0]
-    print ("[INFO] Predicting Subject", root)
+    print("[INFO] Predicting Subject", root)
 
     preds, affine = output_prob_maps(opt, shapes, shapes_rev, tags, input_name)
 
@@ -84,7 +84,7 @@ def predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
     preds = [pred > sigma for pred in preds]
 
     # Saving consensus prediction
-    print ('[INFO] Saving Consensus-based and Single Plane predictions')
+    print('[INFO] Saving Consensus-based and Single Plane predictions')
     for tag, pred in zip(tags,preds):
         volume_name = input_name.split('/')[-1].split('.nii.gz')[0] + '_' + tag + '.nii.gz'
         volume_out = nib.Nifti1Image(pred.astype(np.uint8), affine=affine)
@@ -99,7 +99,7 @@ def post_proc(pred_folder):
     start_time = time.time()
     for img in imgs:
         img2 = img[:-7] + "_pp.nii.gz"
-        print (img2)
+        print(img2)
         data = nib.load(os.path.join(pred_folder, img))
         affine = data.get_affine()
         data = data.get_data()
@@ -122,7 +122,7 @@ def run_inference(opt):
     predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
                 opt.input)
 
-    print ('[INFO] Running post-processing algorithm')
+    print('[INFO] Running post-processing algorithm')
     post_proc(pred_folder)
 
 if __name__ == '__main__':

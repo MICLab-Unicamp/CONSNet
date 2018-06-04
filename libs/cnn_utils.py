@@ -23,7 +23,7 @@ class ExpDecay:
         self.decay = decay
     
     def scheduler(self, epoch):
-        print ("Current lr: ", self.initial_lr * np.exp(-self.decay*epoch))
+        print("Current lr: ", self.initial_lr * np.exp(-self.decay*epoch))
         return self.initial_lr * np.exp(-self.decay*epoch)
 
 ''' Metric used for CNN training'''
@@ -51,7 +51,7 @@ def get_unet2_recod_bn(ch, tag = 'train', patch_size = (None,None)):
     elif tag == 'test':
         inputs = Input((patch_size[0], patch_size[1], ch))
     else:
-        print '[Wrong tag option:', tag,']', 'Use either train ou test tags'
+        print('[Wrong tag option:', tag,']', 'Use either train ou test tags')
         return
         
     inputs_weights = GaussianNoise(gaussian_noise_std)(inputs)

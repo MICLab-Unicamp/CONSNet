@@ -79,7 +79,7 @@ def get_min_max_brain_interval(data, tag):
     elif tag == 'axial':
         rangE = data.shape[2]
     else:
-        print "[Error] You need to specify a tag for the analysis, th options are: sagittal,coronal or axial!"
+        print("[Error] You need to specify a tag for the analysis, th options are: sagittal,coronal or axial!")
         return
     
     for Hc in range(rangE):
@@ -142,7 +142,7 @@ def extract_patches(tr_original,tr_consensus,patch_size,max_patches, tag):
             cut = data[:,:,Hc]
             consensus = consensus_data[:,:,Hc]
         else:
-            print ("[Error] You need to specify a tag for the analysis, th options are: sagittal,coronal or axial!")
+            print("[Error] You need to specify a tag for the analysis, th options are: sagittal,coronal or axial!")
             return
 
         cut_patches = extract_patches_2d(cut, patch_size, max_patches, random_state = random_value)
@@ -193,7 +193,7 @@ def load_and_conc_patches(imgs_train,imgs_masks_train, total_shape):
         mask = np.load(masks[i])
 
         if im.shape != mask.shape:
-            print "mismatch shapes"
+            print("mismatch shapes")
             return
         
         imgs_tr[aux:aux + im.shape[0]] = im
