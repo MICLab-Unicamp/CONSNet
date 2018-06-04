@@ -1,3 +1,7 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 import os, time, argparse
 import nibabel as nib
 import numpy as np
@@ -5,6 +9,8 @@ from libs import evaluation_utils as evl
 from libs import prep_utils as prep
 from libs import cnn_utils as cnn
 from scipy import ndimage as ndi
+
+
 
 def clean_mask(img):
     """Clean up a brain mask by selecting largest connected region.
@@ -67,18 +73,17 @@ def output_prob_maps(opt, shapes, shapes_rev, tags,
     return preds, volume_in.affine
 
 
-def predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
-                input_name):
+def predict_cbp(opt, shapes, shapes_rev, tags):
 
     start_time = time.time()
     sigma = 0.5
 
-    root = input_name.split('/')[-1].split('.nii.gz')[0]
+    root = opt.input.split('/')[-1].split('.nii.gz')[0]
     print("[INFO] Predicting Subject", root)
 
-    preds, affine = output_prob_maps(opt, shapes, shapes_rev, tags, input_name)
+    preds, affine = output_prob_maps(opt, shapes, shapes_rev, tags, opt.input)
 
-    # Making consensus
+    # Averaged consensus
     consensus_pred = np.mean(preds, axis=0)
     preds.append(consensus_pred)
     preds = [pred > sigma for pred in preds]
@@ -86,9 +91,9 @@ def predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
     # Saving consensus prediction
     print('[INFO] Saving Consensus-based and Single Plane predictions')
     for tag, pred in zip(tags,preds):
-        volume_name = input_name.split('/')[-1].split('.nii.gz')[0] + '_' + tag + '.nii.gz'
+        volume_name = opt.input.split('/')[-1].split('.nii.gz')[0] + '_' + tag + '.nii.gz'
         volume_out = nib.Nifti1Image(pred.astype(np.uint8), affine=affine)
-        nib.save(volume_out, os.path.join(pred_folder, volume_name))
+        nib.save(volume_out, os.path.join(opt.pred, volume_name))
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -111,33 +116,24 @@ def post_proc(pred_folder):
 
 def run_inference(opt):
 
-
-    pred_folder = opt.pred_path
-    prep.create_new_dir(pred_folder)
+    prep.create_new_dir(opt.pred)
 
     tags = ['axial', 'coronal', 'sagittal', 'consensus']
     shapes = [(2, 0, 1), (1, 0, 2), (0, 1, 2)]  # Shapes for transpose volume before prediction
     shapes_rev = [(1, 2, 0), (1, 0, 2), (0, 1, 2)]  # Shapes for transpose volume after prediction
 
-    predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
-                opt.input)
+    predict_cbp(opt, shapes, shapes_rev, tags)
 
     print('[INFO] Running post-processing algorithm')
-    post_proc(pred_folder)
+    post_proc(opt.pred)
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-pred_path',
+    parser.add_argument('-pred',
                         type=str,
-                        default='./preds_x',
+                        default='./preds',
                         help='directory where predictions will be saved')
-
-
-    parser.add_argument('-model_path',
-                        type=str,
-                        default='./models',
-                        help='directory where models are saved')
 
     parser.add_argument('-input',
                         type=str,

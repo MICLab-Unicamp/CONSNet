@@ -1,4 +1,4 @@
-CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks
+CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks 
 ==========================================================================================================================
 
 MIT License
@@ -22,7 +22,7 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 
 
 ## Requirements
-- Python 2.7 (working in progress to be compatible to Python 3.0)
+- Python 2/3
 - NumPy 1.14.3
 - SciPy 1.0.1 
 - Sklearn 0.19.1
@@ -32,14 +32,25 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 
 ## Docker image (TO DO)
 
+## Conda virtual environment
+You can create a conda virtual environment to run the code. Once it is done, you clone the project to conda virtual environment. The instructions to create the conda environment are the following ones:
+
+conda create -n project_name python=(2 or 3) -y
+source project_name
+pip install tensorflow-gpu
+pip install keras
+pip install nibabel
+pip install scikit-learn
+pip install SimpleITK
+
 
 ## Usage
 
 ### Inference using CONSNet pre-trained models
-If you just to want to run the inference for a new volume, you need to run the command below providing a text file with the path of the respective data. 
+If you just to want to run the inference for a new volume, you need to run the command below providing the nifit volume path of the respective data. 
 
 ```
-python infer.py -input input_data.txt
+python infer.py -input some_data.nii.gz
 ```
 
 ### Training your own model
@@ -47,11 +58,7 @@ You can train your own model for CONSNet. You need to provide two text files wit
 
 ```
 python prep-train.py -tr_original_filename data.txt -tr_consensus_filename mask.txt
-
 ```
-
-### Fine-tuning CONSNet (TO DO)
-
 
 
 ## Contact

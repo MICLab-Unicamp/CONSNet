@@ -1,9 +1,14 @@
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
 import argparse, os, time
 import numpy as np
 from libs import prep_utils as prep
 from libs import cnn_utils as cnn
 from keras.callbacks import ModelCheckpoint, EarlyStopping, LearningRateScheduler
 from keras.optimizers import RMSprop
+
 
 
 def patches_creation(opt, patch_size, max_patches, tag):
@@ -124,13 +129,12 @@ def main():
     tags = ['axial', 'coronal', 'sagittal']
 
     for tt in tags:
-        print
-        print ('[INFO] Image plane', tt)
+        print('[INFO] Image plane', tt)
 
-        print ('[INFO] Running patches creation')
+        print('[INFO] Running patches creation')
         patches_creation(opt, patch_size, opt.max_patches, tt)
 
-        print ('[INFO] Running cnn training')
+        print('[INFO] Running cnn training')
         cnn.limit_mem()
         train(opt, patch_size, tt)
 
