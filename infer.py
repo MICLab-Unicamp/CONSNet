@@ -51,7 +51,7 @@ def output_prob_maps(opt, shapes, shapes_rev, tags,
 
         # Normalizing and padding data
         dataa = evl.normalize(dataa, mean, std)
-        dataa, offset_x, offset_y, w, h, d = futil.pad(dataa)
+        dataa, offset_x, offset_y, w, h, d = evl.pad(dataa)
 
         # Predicting data
         dataa = dataa.reshape(w, h, d, 1)
@@ -68,31 +68,27 @@ def output_prob_maps(opt, shapes, shapes_rev, tags,
 
 
 def predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
-                ts_original_data_names):
+                input_name):
 
     start_time = time.time()
     sigma = 0.5
-    ii = 0
 
-    for name in ts_original_data_names:
+    root = input_name.split('/')[-1].split('.nii.gz')[0]
+    print ("[INFO] Predicting Subject", root)
 
-        ii += 1
-        root = name.split('/')[-1].split('.nii.gz')[0]
-        print ("[INFO] Predicting Subject", root, '{0}/{1} volumes'.format(ii, len(ts_original_data_names)))
+    preds, affine = output_prob_maps(opt, shapes, shapes_rev, tags, input_name)
 
-        preds, affine = output_prob_maps(opt, shapes, shapes_rev, tags, name)
+    # Making consensus
+    consensus_pred = np.mean(preds, axis=0)
+    preds.append(consensus_pred)
+    preds = [pred > sigma for pred in preds]
 
-        # Making consensus
-        consensus_pred = np.mean(preds, axis=0)
-        preds.append(consensus_pred)
-        preds = [pred > sigma for pred in preds]
-
-        # Saving consensus prediction
-        print ('[INFO] Saving Consensus-based and Single Plane predictions')
-        for tag, pred in zip(tags,preds):
-            volume_name = name.split('/')[-1].split('.nii.gz')[0] + '_' + tag + '.nii.gz'
-            volume_out = nib.Nifti1Image(pred.astype(np.uint8), affine=affine)
-            nib.save(volume_out, os.path.join(pred_folder, volume_name))
+    # Saving consensus prediction
+    print ('[INFO] Saving Consensus-based and Single Plane predictions')
+    for tag, pred in zip(tags,preds):
+        volume_name = input_name.split('/')[-1].split('.nii.gz')[0] + '_' + tag + '.nii.gz'
+        volume_out = nib.Nifti1Image(pred.astype(np.uint8), affine=affine)
+        nib.save(volume_out, os.path.join(pred_folder, volume_name))
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -118,14 +114,13 @@ def run_inference(opt):
 
     pred_folder = opt.pred_path
     prep.create_new_dir(pred_folder)
-    input_data = prep.read_file(opt.input)
 
     tags = ['axial', 'coronal', 'sagittal', 'consensus']
     shapes = [(2, 0, 1), (1, 0, 2), (0, 1, 2)]  # Shapes for transpose volume before prediction
     shapes_rev = [(1, 2, 0), (1, 0, 2), (0, 1, 2)]  # Shapes for transpose volume after prediction
 
     predict_cbp(opt, pred_folder, shapes, shapes_rev, tags,
-                input_data)
+                opt.input)
 
     print ('[INFO] Running post-processing algorithm')
     post_proc(pred_folder)
