@@ -35,6 +35,7 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 ## Conda virtual environment
 You can create a conda virtual environment to run the code. Once it is done, you clone the project to conda virtual environment. The instructions to create the conda environment are the following ones:
 
+```
 conda create -n project_name python=(2 or 3) -y
 source project_name
 pip install tensorflow-gpu
@@ -42,7 +43,7 @@ pip install keras
 pip install nibabel
 pip install scikit-learn
 pip install SimpleITK
-
+```
 
 ## Usage
 
