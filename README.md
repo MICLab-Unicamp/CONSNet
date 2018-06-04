@@ -29,8 +29,17 @@ This is an alpha version of the CONSNet presented in the paper *Convolutional Ne
 - Nibabel 2.2.1 
 - Keras 2.1.6
 - Tensorflow 1.4.0
+- SimpleITK
 
-## Docker image (TO DO)
+## Install from scratch
+
+```
+pip install tensorflow-gpu* (please check the requirements on the official website: https://www.tensorflow.org/install/)
+pip install keras (scipy and numpy are automatically installed here)
+pip install nibabel
+pip install scikit-learn
+pip install SimpleITK
+```
 
 ## Conda virtual environment
 You can create a conda virtual environment to run the code. Once it is done, you clone the project to conda virtual environment. The instructions to create the conda environment are the following ones:
@@ -38,12 +47,14 @@ You can create a conda virtual environment to run the code. Once it is done, you
 ```
 conda create -n project_name python=(2 or 3) -y
 source project_name
-pip install tensorflow-gpu
-pip install keras
+pip install tensorflow-gpu* (please check the requirements on the official website: https://www.tensorflow.org/install/)
+pip install keras (scipy and numpy are automatically installed here)
 pip install nibabel
 pip install scikit-learn
 pip install SimpleITK
 ```
+
+## Docker image (TO DO)
 
 ## Usage
 
