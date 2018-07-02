@@ -75,4 +75,4 @@ python prep-train.py -tr_original_filename data.txt -tr_consensus_filename mask.
 
 ## Contact
 
-If you have any doubts, questions or suggestions to improve this code, please contact me at: oeslle.lucena.souza@gmail.com
+If you have any doubts, questions or suggestions to improve this code, please contact me at: oeslle.lucena@gmail.com
