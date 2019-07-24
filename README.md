@@ -1,5 +1,5 @@
-CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks 
-==========================================================================================================================
+CONSNet: Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Silver Standard Masks
+==========================================================================================================
 
 MIT License
 Copyright (c) 2018 Medical Image Computing Lab - MICLab Unicamp
@@ -7,20 +7,11 @@ Copyright (c) 2018 Medical Image Computing Lab - MICLab Unicamp
 
 ## Description
 
-This is an alpha version of the CONSNet presented in the paper *Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver Standard Masks* . The article is available for download here: https://arxiv.org/pdf/1804.04988.pdf . If you use this code on your work, please cite the this article.
+This is an alpha version of the CONSNet presented in the paper *Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Silver Standard Masks* . The article is available for download here: https://www.sciencedirect.com/science/article/pii/S0933365718305177?via%3Dihub . If you use this code on your work, please cite the this article.
 
-- Lucena, Oeslle, et al. "Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Consensus-based Silver standard Masks." arXiv preprint arXiv:1804.04988 (2018).
+- Lucena, Oeslle, et al. "Convolutional Neural Networks for Skull-stripping in Brain MR Imaging using Silver Standard Masks." Artificial Intelligence in Medicine, in pres (2019).
 
 - *CC-359 Dataset* https://sites.google.com/view/calgary-campinas-dataset/home
-
-@article{lucena2018convolutional,
-  title={Convolutional Neural Networks for Skull-stripping in 
-  Brain MR Imaging using Consensus-based Silver standard Masks},
-  author={Lucena, Oeslle and Souza, Roberto and Rittner, Leticia and 
-  Frayne, Richard and Lotufo, Roberto},
-  journal={arXiv preprint arXiv:1804.04988},
-  year={2018}
-}
 
 
 ## Requirements
